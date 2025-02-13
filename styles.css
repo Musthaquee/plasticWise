@@ -1,0 +1,533 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 80px; /* Add padding to body to account for fixed header */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  position: fixed;
+  top: 0; /* Ensure the header is visible at the top of the page */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: top 0.3s ease-in-out;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  height: 50px; /* Set the height of the logo container */
+}
+
+header .logo img {
+  height: 100%; /* Ensure the logo scales properly within its container */
+  max-width: 100%; /* Avoid stretching */
+  transition: transform 0.3s ease-in-out;
+}
+
+header .logo img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px; /* Adjust spacing between nav items */
+  margin: 0;
+  margin: 0%;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 15px;
+  margin-right: 50px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: url("Assets/bg.webp") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative; /* For overlay */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out; /* Add animation */
+}
+
+.cta-button {
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+  background: #0abb10; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* About, Solutions, Get Involved, Contact */
+.about,
+.solutions,
+.get-involved,
+.contact .scan-item {
+  padding: 80px 20px; /* Increased padding for better spacing */
+  text-align: center;
+  scroll-margin-top: 80px; /* Ensure sections scroll into view below the header */
+  background-color: #f4f4f4;
+}
+
+.solution-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #4caf50;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+footer .social-links a:hover {
+  color: #4caf50; /* Change color on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  footer .social-links a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Contact Section */
+.contact {
+  padding: 80px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  color: #333;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #4caf50; /* Highlight on focus */
+  outline: none;
+}
+
+#contact-form button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact-form button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  #contact-form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  #contact-form button {
+    font-size: 1.1rem;
+  }
+}
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+footer .social-links a:hover {
+  color: #4caf50; /* Change color on hover */
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  footer .social-links a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+}
+/* Scan Item Section */
+.scan-item {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.scan-item h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#scan-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#scan-button:hover {
+  background-color: #45a049;
+}
+
+.image-upload {
+  margin-bottom: 20px;
+}
+
+#scan-result {
+  margin-top: 20px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#scan-result h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#scan-result p {
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .scan-item h2 {
+    font-size: 1.5rem;
+  }
+
+  #scan-button {
+    font-size: 1rem;
+  }
+
+  #scan-result p {
+    font-size: 1rem;
+  }
+}
+/* Scan Item Section */
+.scan-item {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f4f4f4; /* Light background for better contrast */
+  border-radius: 10px; /* Rounded corners for a smooth look */
+  margin-top: 80px; /* Ensures content isn't hidden under the fixed header */
+}
+
+.scan-item h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 1px; /* Adds a bit of spacing to the title */
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+.scan-item p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; /* Center-aligns the text */
+  line-height: 1.6;
+}
+
+/* Image Upload Container */
+.image-upload {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#file-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#file-input:focus {
+  border-color: #4caf50; /* Highlight input box when focused */
+  outline: none;
+}
+
+#scan-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth hover effect */
+  width: 100%;
+  max-width: 200px;
+}
+
+#scan-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+#scan-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Scan Result Section */
+#scan-result {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; /* Centers the result container */
+  display: none; /* Initially hidden */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#scan-result h3 {
+  font-size: 1.8rem;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+#scan-result p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+#scan-result #item-info {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .scan-item h2 {
+    font-size: 2rem;
+  }
+
+  .scan-item p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  #scan-button {
+    font-size: 1rem;
+  }
+
+  #scan-result {
+    width: 90%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Add to styles.css */
+.spinner {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlasticWise - Empowering a Plastic-Free Future</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="Assets/logo.webp" alt="PlasticWise Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#get-involved">Get Involved</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Empowering a Plastic-Free Future</h1>
+        <p>
+          Join us in the fight against plastic pollution. Together, we can make
+          a difference.
+        </p>
+        <a href="#get-involved" class="cta-button">Get Involved</a>
+      </div>
+    </section>
+    <br />
+    <!-- Scan Plastic Item Section -->
+    <section id="scan-item" class="scan-item">
+      <h2>Scan and Identify Plastic Items</h2>
+      <p>Upload an image or scan a barcode to identify the plastic item.</p>
+
+      <!-- Image Upload -->
+      <div class="image-upload">
+        <input type="file" id="file-input" accept="image/*" />
+        <button id="scan-button">Scan Image</button>
+      </div>
+
+      <div id="scan-result">
+        <h3>Item Identified:</h3>
+        <p id="item-name">No item detected yet.</p>
+        <p id="item-info"></p>
+      </div>
+    </section>
+
+    <br />
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        PlasticWise is a non-profit organization dedicated to reducing plastic
+        waste and promoting sustainable alternatives. Our mission is to educate,
+        inspire, and empower individuals and communities to take action against
+        plastic pollution.
+      </p>
+    </section>
+    <br />
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+      <h2>Our Solutions</h2>
+      <div class="solution-cards">
+        <div class="card">
+          <h3>Recycling Programs</h3>
+          <p>
+            Learn about our community recycling initiatives and how you can
+            participate.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Eco-Friendly Alternatives</h3>
+          <p>
+            Discover sustainable products that can replace single-use plastics.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Education & Awareness</h3>
+          <p>
+            Access resources to educate yourself and others about plastic
+            pollution.
+          </p>
+        </div>
+      </div>
+    </section>
+    <br />
+    <!-- Get Involved Section -->
+    <section id="get-involved" class="get-involved">
+      <h2>Get Involved</h2>
+      <p>
+        Join our community and take action today. Volunteer, donate, or spread
+        the word!
+      </p>
+      <a href="#contact" class="cta-button">Contact Us</a>
+    </section>
+    <br />
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+    <!-- Add this loading spinner to your HTML (place right after the scan button) -->
+    <div id="loading-spinner" class="spinner" style="display: none">
+      <div class="spinner-circle"></div>
+      <p>Analyzing plastic item...</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 PlasticWise. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
